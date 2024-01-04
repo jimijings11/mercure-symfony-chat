@@ -53,7 +53,7 @@ services:
         volumes:
             - db_data:/var/lib/mysql
         ports:
-            - '3306:3306'
+            - '3307:3306'
 
     mercure:
         image: dunglas/mercure
@@ -85,7 +85,7 @@ services:
         ports:
             - 6379:6379
         volumes:
-            - /docker/redis:/data
+            - redis-data:/data
         networks:
             - dev
 
@@ -93,3 +93,5 @@ volumes:
   db_data:
   mercure_data:
   mercure_config:
+  redis-data:
+    driver: local
